@@ -4,8 +4,11 @@ Clickable static prototype (plain HTML/CSS/JS, no build step) recreated from the
 **"End to End Prototype"** (`fileKey Ei3vesaWdzL7bKm5sc03Jo`), following the **Lydia** design
 system already linked to that file.
 
-**Live:** https://ayamaguchi-avid.github.io/e2e-prototype/
-**Source:** https://github.com/ayamaguchi-avid/e2e-prototype
+**Live:** https://ayamaguchi-avid.github.io/e2e-prototype-v2/
+**Source:** https://github.com/ayamaguchi-avid/e2e-prototype-v2
+
+This is an independent copy of the original `e2e-prototype` repo, created as a separate project
+(same Figma source and content as of 2026-09-29).
 
 17 HTML files covering two connected flows:
 
@@ -25,7 +28,7 @@ Any simple static server works (it can't be opened directly as `file://` because
 scripts/CSS won't load without a server). Example:
 
 ```bash
-cd e2e-prototype
+cd e2e-prototype-v2
 python3 -m http.server 8080
 ```
 
@@ -34,7 +37,7 @@ Then open `http://localhost:8080/` (this loads `index.html`, the CBR Home screen
 ## Structure
 
 ```
-e2e-prototype/
+e2e-prototype-v2/
   index.html              # entry point = home-empty.html
   css/shared.css          # design tokens + all reusable components (buttons, tables,
                            #   step-tracker, tooltips, toggles, modals, side sheets, .stage
@@ -246,7 +249,7 @@ The repo already exists and is connected to GitHub Pages (serving `main` branch,
 further local edit:
 
 ```bash
-cd e2e-prototype
+cd e2e-prototype-v2
 git add -A
 git commit -m "describe the change"
 git push
@@ -261,12 +264,12 @@ GitHub Pages:
 
 **Option A — Azure Static Web Apps**
 1. In the Azure portal, create a **Static Web App** resource and connect it to
-   `github.com/ayamaguchi-avid/e2e-prototype`, branch `main`.
+   `github.com/ayamaguchi-avid/e2e-prototype-v2`, branch `main`.
 2. Build preset: **Custom** (no build). App location: `/`. Output location: (empty / `/`).
 3. Azure generates a GitHub Action that deploys on every push, producing a public URL.
 
 **Option B — Azure Storage Account (no Git)**
 1. Create a Storage Account, enable **Static website** in its settings.
-2. Manually upload the entire contents of `e2e-prototype/` (keeping the folder structure) to
+2. Manually upload the entire contents of `e2e-prototype-v2/` (keeping the folder structure) to
    the `$web` container.
 3. Use the generated "primary endpoint" URL.
